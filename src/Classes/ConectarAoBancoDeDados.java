@@ -12,7 +12,7 @@ public class ConectarAoBancoDeDados {
 		
 		// Conexão com Banco, teste de conexão
 		try {
-			return DriverManager.getConnection("jdbc:mysql://localhost:3306/bdagenda", "root", "#anhanguera123BD");
+			return DriverManager.getConnection("jdbc:mysql://localhost:3306/bdagenda", "root", "1234");
 		} catch(SQLException e) {
 			JOptionPane.showMessageDialog(null,"O driver do banco de dados não foi encontrado" + e);
 		}

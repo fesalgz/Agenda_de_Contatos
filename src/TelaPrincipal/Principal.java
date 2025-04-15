@@ -76,7 +76,7 @@ public class Principal {
 			}
 		});
 		btnTestarConexaoBD.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnTestarConexaoBD.setBounds(80, 90, 298, 85);
+		btnTestarConexaoBD.setBounds(70, 70, 298, 85);
 		frmAgendaDeContatos.getContentPane().add(btnTestarConexaoBD);
 		
 		JMenuBar menuBar = new JMenuBar();
