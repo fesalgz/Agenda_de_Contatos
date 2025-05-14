@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
 public class OperacoesNoBancoDeDados {
 
 	// criar um atributo
@@ -19,7 +21,7 @@ public class OperacoesNoBancoDeDados {
 		try {
 			
 		//vamos criar uma nova classe com o que queremos cadastrar
-		String informacoesSQL = "insert into tabela_cadastro(nome. telefone, email, endereco, nascimento, filho)"
+		String informacoesSQL = "insert into tabela_cadastro(nome, telefone, email, endereco, nascimento, filhos)"
 			+ "values(?,?,?,?,?,?)";
 		//insira na tela cadastro, nesses colunas(objetos) nome etc
 		// cada interrogação corresponde a um valor
@@ -33,9 +35,16 @@ public class OperacoesNoBancoDeDados {
 			gravarInformacao.setString(5, objeto.getNascimento());
 			gravarInformacao.setString(6, objeto.getFilho());
 			
+			//executa os comandos SQL
+			gravarInformacao.execute();
+			//fecha
+			gravarInformacao.close();
+			
+			JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso");
+			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Erro ao salvar os dados!");
+			
 		}
 		
 		
