@@ -3,6 +3,8 @@ package Classes;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 
@@ -47,7 +49,21 @@ public class OperacoesNoBancoDeDados {
 			
 		}
 		
+	}
+	
+	public List<DadosAgenda> listarItens() {
 		
+		List<DadosAgenda> lista = new ArrayList<DadosAgenda>();
+		
+		String sqlBancoDados = "select * from tabela_cadastro";
+		
+		try {
+			PreparedStatement lerInformacoes = conexao.prepareStatement(sqlBancoDados);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }
